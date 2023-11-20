@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 
 const BookList =({books, removeBook})=>{
@@ -7,5 +8,10 @@ const BookList =({books, removeBook})=>{
         <button onClick={()=>removeBook(book.id)}>Remove</button></li>)}
         </ul>
     );
+};
+
+BookList.prototype={
+    books: PropTypes.array.isRequired,
+    removeBook: PropTypes.func.isRequired
 };
 export default BookList;
